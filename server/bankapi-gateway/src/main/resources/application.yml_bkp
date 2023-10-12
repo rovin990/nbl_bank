@@ -1,0 +1,38 @@
+#server:
+#  port: 8080
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#spring:
+#  application:
+#    name: gateway-service 
+#  cloud:
+#    gateway:
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "http://localhost:3000/"
+#            allowedMethods:
+#            - GET
+#            - POST
+#            - OPTIONS
+#            - DELETE
+#        routes:
+#       - id : register-service
+#         uri : lb://register-service
+#         predicates : 
+#         - Path=/myBalance/{accountNumber} ,/user
+#         
+#logging:
+#  level:
+#    root: INFO
+#    org:
+#      springframwork:
+#        cloud:
+#          gateway:
+#            route:
+#              RouteDefinitionLocator: INFO
+#          
+#           
+#    
